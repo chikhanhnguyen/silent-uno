@@ -1,0 +1,15 @@
+{
+	"joueurs": {
+	},
+	"equipe_active": "",
+	"bleu": {
+		"cartes": []
+	},
+	"rouge": {
+		"cartes": []
+	},
+	"cartes_sur_plateau": [],
+	"cartes_a_tirer": []
+}
+
+

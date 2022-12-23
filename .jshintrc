@@ -1,0 +1,19 @@
+{
+    "globals": {
+        "console": false,
+        "require": false,
+        "module": false,
+		"__dirname": false
+    },
+    "bitwise": true,
+    "curly": true,
+    "eqeqeq": true,
+	"esversion": 6,
+    "evil": true,
+    "globalstrict": true,
+    "latedef": "nofunc",
+    "strict": true,
+    "undef": true,
+    "unused": true,
+    "varstmt": true
+}

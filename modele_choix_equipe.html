@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Silent Uno</title>
+        <link rel="icon" href="ressources/Uno_logo.png" type="image/icon type">
+        <link rel="stylesheet" type="text/css" href="common.css">
+        <link rel="stylesheet" href="style_autre.css">
+        <meta http-equiv="refresh" content="4">
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    </head>
+    <body>
+        <div class="center" style="top: 10%; left: 7%;">
+            <img src="ressources/Uno_logo.png" style="height: 17.5vmin;">
+        </div>
+        <div class="center" style="top: 30%; left: 35%">
+            <form action="/req_choix_equipe" method="GET">
+                <input type="hidden" name="pseudo" value="{pseudo}">
+				<input type="hidden" name="equipe" value="rouge">
+                <button class="button" style="width: 15vw; height: 6vh; font-size: 2vmin">EQUIPE ROUGE</button>
+				<br>
+            </form>
+        </div>
+		<div class="center" style="top: 45%; left: 35%">
+			<span class="Typo" style="font-size: 7vmin; color: white;"> <em> {rougeJoueur1} <br> {rougeJoueur2} </em></span>
+		</div>
+		<div class="center" style="top: 30%; left: 65%">
+			<form action="/req_choix_equipe" method="GET">
+                <input type="hidden" name="pseudo" value="{pseudo}">
+				<input type="hidden" name="equipe" value="bleu">
+                <button class="button" style="width: 15vw; height: 6vh; font-size: 2vmin">EQUIPE BLEUE</button>
+				<br>
+            </form>
+		</div>
+		<div class="center" style="top: 45%; left: 65%">
+            <span class="Typo" style="font-size: 7vmin; color: white;"> <em> {bleuJoueur1} <br> {bleuJoueur2} </em></span>
+        </div>
+    </body>
+</html>
+

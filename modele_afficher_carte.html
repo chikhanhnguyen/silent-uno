@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Silent Uno</title>
+		<link rel="icon" href="ressources/Uno_logo.png" type="image/icon type">
+		<link rel="stylesheet" type="text/css" href="common.css">
+		<link rel="stylesheet" href="style_autre.css">
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+		<div class="center" style="top: 20%; left: 10%;">
+			<img style="width: 175px; height: 175px;" src="ressources/Uno_logo.png">
+		</div>
+		<div style="color: cornflowerblue;">
+			<div class="center" style="top: 20%; left: 50%;">
+				<fieldset style="width: 15vw; height: 12.5vh; font-size: 4vmin; border-radius: 4vh;">
+				</fieldset>
+			</div>
+			<div class="center" style="top: 20%; left: 50%;">
+				<label style="font-size: 2.5vmin">Visualisez bien votre main <br> pour y discutez !</label>
+			</div>
+			<div class="center" style="top: 45%; left: 50%;">
+				<fieldset style="width: 30vw; height: 20vh; font-size: 4vmin; border-radius: 4vh;">
+				</fieldset>
+			</div>
+			<div class="center" style="top: 45%; left: 50%;">
+				<label style="font-size: 4vmin">Notre main</label>
+			</div>
+			<div class="center" style="top: 70%; left: 50%;">
+				<fieldset style="width: 5vw; height: 5vh; font-size: 4vmin; border-radius: 5vh;">
+				</fieldset>
+			</div>
+			<div class="center" style="top: 70%; left: 50%;">
+				<div id="compte_a_rebours"><noscript>Time :</noscript></div>
+			</div>
+			<script type="text/javascript">
+				let temps_max = 6;
+				function compte_a_rebours()
+				{	
+					const compte_a_rebours = document.getElementById("compte_a_rebours");
+					const prefixe = "Time : ";		
+					temps_max = (temps_max-1);
+					compte_a_rebours.innerHTML = prefixe + (temps_max);
+					if (temps_max === 0) {
+						window.location.href = "http://localhost:5000/req_afficher_carte";
+					}
+
+					const actualisation = setTimeout("compte_a_rebours();", 1000);	
+				}
+				compte_a_rebours();
+			</script>
+		</div>
+    </body>
+</html>
+

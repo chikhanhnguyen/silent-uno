@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Silent Uno</title>
+        <link rel="icon" href="ressources/Uno_logo.png" type="image/icon type">
+        <link rel="stylesheet" type="text/css" href="common.css">
+        <link rel="stylesheet" href="style_autre.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script>
+            function startTimer(duration, display) {
+                var timer = duration;
+                setInterval(function () {
+                    display.textContent = parseInt(timer, 10);
+                    if (--timer < 0) {
+                        timer = duration;
+                    }
+                }, 1000);
+            }
+
+            window.onload = function () {
+                var timeSeconds = {tempsReste},
+                    display = document.querySelector('#time');
+                startTimer(timeSeconds, display);
+            };
+
+            setTimeout(function(){
+               window.location="http://localhost:5000/req_en_jeu?pseudo={pseudo}";
+            }, ({tempsReste} + 1) * 1000);
+
+            setInterval(function()
+            {
+                $.get ("partie/chat_{equipe}.json", function (data) {
+                    let listeChat = JSON.parse(data);
+                    let htmlChat = [];
+                    let i;
+                    for (i = 0; i < listeChat.length; i++) {
+                        let chat = listeChat[i];
+                        htmlChat.push(`<b>${chat.pseudo} :</b> ${chat.message}`);
+                    }
+                    $("#contenu_chat").html(htmlChat.join("<br>"));
+                });
+            }, 500);
+        </script>
+    </head>
+    <body>
+        <div class="center" style="top: 10%; left: 7%;">
+            <img src="ressources/Uno_logo.png" style="height: 17.5vmin;">
+        </div>
+        
+        <div class="center" style="top: 15%; left: 50%;">
+            <div id="rcorners_equipe_{autre_equipe}">{cartes_opponent}</div>
+        </div>
+        <div class="center" style="top: 15%; left: 80%;">
+            <img src="ressources/avatar_autre.png" style="width: 6vmin;" /> <br>
+            <span class="Typo" style="font-size: 3vmin; color: white;"> <em> {joueur3} </em></span> <br>
+        </div>
+        <div class="center" style="top: 15%; left: 90%;">
+            <img src="ressources/avatar_autre.png" style="width: 6vmin;" /> <br>
+            <span class="Typo" style="font-size: 3vmin; color: white;"> <em> {joueur4} </em></span> <br>
+        </div>
+        
+		<div class="center" style="top: 50%; left: 50%;">
+            <div id="rcorners_equipe_plateau"></div>
+        </div>
+        <div class="center" style="top: 50%; left: 50%;">
+            {cartes_sur_plateau}
+        </div>
+
+        <div class="center" style="top: 24%; left: 16%;">
+            <b>
+                <span style="color: white; margin-right:1vmin;">TEMPS :</span>
+                <span id="time" style="color:red; width: 4vmin;">{tempsReste}</span>
+                <span style="color:red; width: 4vmin;">s</span>
+            </b>
+        </div>
+        <div class="center" style="top: 51%; left: 16%;">
+            <div id="wrapper">
+                <div id="menu">
+                    <div style="clear:both"></div>
+                </div>
+                   
+                <div id="chatbox">
+                    <div id="contenu_chat"></div>
+                </div>
+                   
+                <form action="/req_chat" method="GET">
+                    <input type="hidden" name="pseudo" value="{pseudo}">
+                    <input name="message" autocomplete="off" type="text" id="usermsg" size="63" placeholder="Votre message ..." />
+                    <input name="submit" type="submit"  id="submitmsg" value="Envoyer" />
+                </form>
+            </div>
+        </div>
+
+        <div class="center" style="top: 85%; left: 50%;">
+            <div id="rcorners_equipe_{equipe}">{cartes}</div>
+        </div>
+        <div class="center" style="top: 88%; left: 80%;">
+            <img src="ressources/avatar_moi.png" style="width: 6vmin; border: 5px solid  rgb(41, 97, 41); border-radius: 100%;" /> <br>
+            <span class="Typo" style="font-size: 3vmin; color: rgb(41, 97, 41);"> <em> {joueur1} </em></span> <br>
+        </div>
+        <div class="center" style="top: 88%; left: 90%;">
+            <img src="ressources/avatar_autre.png" style="width: 6vmin;" /> <br>
+            <span class="Typo" style="font-size: 3vmin; color: white;"> <em> {joueur2} </em></span> <br>
+        </div>
+        
+		<div class="center" style="top: 50%; left: 80%;">
+            <img src="ressources/carte_de_dos.png" style="width: 8vmin; height: 11vmin;" />
+        </div>
+        <div class="center" style="top: 50.3%; left: 79.85%;">
+			<img src="ressources/carte_de_dos.png" style="width: 8vmin; height: 11vmin;" />
+        </div>
+        <div class="center" style="top: 50.6%; left: 79.7%;">
+			<img src="ressources/carte_de_dos.png" style="width: 8vmin; height: 11vmin;" />
+        </div>
+        <div class="center" style="top: 50.8%; left: 79.55%;">
+            <img src="ressources/carte_de_dos.png" style="width: 8vmin; height: 11vmin;" />
+        </div>
+    </body>
+</html>

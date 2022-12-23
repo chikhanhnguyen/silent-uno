@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Silent Uno</title>
+		<link rel="icon" href="ressources/Uno_logo.png" type="image/icon type">
+		<link rel="stylesheet" type="text/css" href="common.css">
+		<link rel="stylesheet" href="style_accueil.css">
+		<link rel="stylesheet" type="text/css" href="beautiful_list.css">
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    </head>
+    <body>
+		<div class="center" style="top: 10%; left: 7%;">
+            <img src="ressources/Uno_logo.png" style="height: 17.5vmin;">
+        </div>
+		<div class="center" style="top: 50%; left: 30%; text-align: left; padding: 13px 100px 50px 100px; border: 1px solid rgb(255, 255, 255);">
+			<form action="/req_donner" method="GET">
+				<p><br><br>
+					<label class="Typo" style="font-size: 5vmin; color: white;">Pseudo: </label>
+					<span class="Typo" style="font-size: 7vmin; color: white;"> <em> {pseudo} </em></span>
+					<br/>
+					<input type="checkbox" name="anonyme" value="true"><label class="Typo" style="color: white;">Participation en anomyne </label></input> 
+					<br/><br/><br/>
+					<label class="Typo" style="font-size: 5vmin; color: white;">Montant:</label> 
+					<table>
+						<tbody style="font-size: 2vmin; font-weight: bold; color: white;">
+							<tr>
+								<td><input type="radio" value="5" name="montant"> 5€ </input></td>
+                  	 			<td><input type="radio" value="10" name="montant"> 10€ </input></td>
+                   				<td><input type="radio" value="20" name="montant"> 20€ </input></td>
+							</tr>
+							<tr>
+                        	    <td><input type="radio" value="50" name="montant"> 50€ </input></td>
+                   				<td><input type="radio" value="100" name="montant"> 100€ </input></td>
+                    			<td><input type="radio" value="autre" name="montant">
+										<input type="text" name="montantAutre" value="" style="width: 7vmin;" placeholder="Autre">
+										</input>
+									</input>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</p>
+				<br>
+				{erreur}
+				<br>
+				<span class="Typo" style="text-align: center;">
+					<input type="hidden" name="pseudo" value="{pseudo}">
+        			<button class="button" type="submit" style="width: 16vw; height: 6vh; font-size: 2vmin;">Donner</button>
+				</span>
+				<br>
+			</form>
+       	</div>
+		<div class="center" style="top: 50%; left: 70%; text-align: left; padding: 10px 30px 10px 30px; border: 1px solid rgb(255, 255, 255);">
+			<form>
+					<label class="Typo" style="font-size: 5vmin; color: white;">Donateurs Récents</label>
+					<br>
+					<label class="Typo" style="color: white;">{donateurs}
+			</form>
+		</div>
+		<div class="center" style="top: 90%; left: 10%;">
+            <form action="/req_afficher_accueil_membre" method="GET">
+				<div class="Typo">
+				<input type="hidden" name="pseudo" value="{pseudo}">
+				<button class="button" style="width: 10vw; height: 6vh; font-size: 2vmin;">Retour</button>
+       			</div>
+			</form>
+		</div>
+	</body>
+</html>

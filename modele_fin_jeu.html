@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Silent Uno - Salle d'attente</title>
+		<link rel="icon" href="ressources/Uno_logo.png" type="image/icon type">
+		<link rel="stylesheet" href="style_accueil.css">
+		<link rel="stylesheet" type="text/css" href="common.css">
+	</head>
+	<body>
+		<div class="center" style="top: 10%; left: 7%;">
+            <img src="ressources/Uno_logo.png" style="height: 17.5vmin;">
+        </div>
+		<div class="center" style="top: 20%; left: 50%;">
+			<span class="Typo" style="font-size: 3vmin; color: rgb(255, 255, 255);">{message1}</span>
+			<span class="Typo" style="font-size: 4vmin; color: rgb(86, 161, 76);"> <em> {pseudo} </em></span>
+			<span class="Typo" style="font-size: 3vmin; color: rgb(255, 255, 255);">{message2}</span>
+		</div>
+		<div class="center" style="top: 50%; left: 50%;">
+			<img src="{image_fin_jeu}" style="width: 40vmin;" />
+		</div>
+		<form action="/req_afficher_accueil_membre" method="GET">
+            <div class="center" style="top: 85%; left: 50%;">
+                <input type="hidden" name="pseudo" value="{pseudo}">
+                <button class="button" style="width: 17vw; height: 7vh; font-size: 2vmin;">Retourner à l'accueil</button>
+            </div>
+		</form>
+	</body>
+</html>

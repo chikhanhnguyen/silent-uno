@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+  
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="refresh" content="4">
+        <title>Silent Uno</title>
+        <link rel="icon" href="ressources/Uno_logo.png" type="image/icon type">
+        <link rel="stylesheet" type="text/css" href="common.css">
+        <link rel="stylesheet" href="style_accueil.css">
+		<link rel="stylesheet" type="text/css" href="beautiful_list.css">
+    </head>
+    <body>
+        <div class="center" style="top: 10%; left: 7%;">
+            <img src="ressources/Uno_logo.png" style="height: 17.5vmin;">
+        </div>
+    	<div class="Typo">
+        	<div class="center" style="top: 30%; left: 50%">
+            	<h1 style="font-size: 250% ;color: white">
+                	{nombre}/4 joueurs en attentes ...
+					<br>
+					COMPLET
+                    <br>
+						<label class="Typo" style="font-size: 3vmin; color: white; text-align: left;"> {joueurs} </label>
+                </h1>
+            </div>
+        </div>
+		<form action="/req_choix_equipe" method="GET">
+            <div class="center" style="top: 55%; left: 50%;">
+                <input type="hidden" name="pseudo" value="{pseudo}">
+                <button class="button" style="width: 15vw; height: 6vh; font-size: 2vmin;">Commencez le JEU</button>
+            </div>
+        </form>
+        <form action="/req_supprAttente" method="GET">
+            <div class="center" style="top: 70%; left: 50%;">
+                <input type="hidden" name="pseudo" value="{pseudo}">
+                <button class="button" style="width: 15vw; height: 6vh; font-size: 2vmin;">Quitter la salle d'attente</button>
+            </div>
+        </form>
+    </body>
+</html>
+

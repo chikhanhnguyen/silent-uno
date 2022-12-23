@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Silent Uno</title>
+        <link rel="icon" href="ressources/Uno_logo.png" type="image/icon type">
+        <link rel="stylesheet" type="text/css" href="common.css">
+        <link rel="stylesheet" type="text/css" href="style_accueil_membre.css">
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    </head>
+    <body>
+        <div class="center" style="top: 15%; left: 15%;">
+            <img src="ressources/Uno_logo.png" style="height: 17.5vmin;">
+        </div>
+        
+        <div class="center" style="top: 25%; left: 50%;">
+            <h4 class="wordCarousel">
+                <div class="Typo">
+                    <ul class="flip4">
+						<strong>
+                        <li>欢迎</li>
+                        <li>Xin chào</li>
+                        <li>Welcome</li>
+                        <li>Bienvenue</li>
+						</strong>
+                    </ul>
+                </div>
+                <span style="color: white;"> : </span> <span class="color_silver" style="font-family: 'Lato', sans-serif;"><strong><em>{pseudo}</em></strong></span> 
+            </h4>
+        </div>
+        <div class="center" style="top: 40%; left: 50%;">
+            <form action="/req_jouer" method="GET">
+				<input type="hidden" name="pseudo" value="{pseudo}">
+                <button class="button" style="width: 30vw; height: 20vh; font-size: 4vmin">Jouer</button>
+            </form>
+        </div>
+        <div class="center" style="top: 10%; left: 80%;">
+            <form action="/req_afficher_compte" method="GET">
+				<input type="hidden" name="pseudo" value="{pseudo}">
+				<button class="button" style="width: 15vw; height: 6vh; font-size: 2vmin">Compte</button>
+            </form>
+        </div>
+        <div class="center" style="top: 18%; left: 80%;">
+            <form action="/req_deconnexion" method="GET"> 
+                <button class="button" style="width: 15vw; height: 6vh; font-size: 2vmin">Déconnexion</button>
+            </form>
+        </div>
+        <div class="center" style="top: 80%; left: 80%;">
+            <form action="/req_didacticiel" method="GET"> 
+                <button class="button" style="width: 15vw; height: 6vh; font-size: 2vmin" >Didacticiel</button>
+            </form>
+        </div>
+        <div class="center" style="top: 80%; left: 20%;">
+            <form action="/req_donation" method="GET">
+				<input type="hidden" name="pseudo" value="{pseudo}">
+                <button class="button" style="width: 15vw; height: 6vh; font-size: 2vmin">Donation</button>
+            </form>
+        </div>
+    </body>
+</html>
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Silent Uno</title>
+		<link rel="icon" href="ressources/Uno_logo.png" type="image/icon type">
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="style_accueil.css">
+		<link rel="stylesheet" href="common.css">
+	</head>
+    <body>
+        <img class="LOGOACCUEIL" src="ressources/Logo_accueil.png">
+        <div class="textcenter">
+        	<h2 class="Typo">Silent UNO</h2>
+
+        	<span style="color: red;">{erreur}</span><br><br>
+
+        	<form action="/req_identifier_fr" method="GET">
+            	<div class="Aligntext">
+            		<label class="Typo" style="font-size: 20px;">Pseudo :</label>
+            		<input type="text" name="pseudo" value="{pseudo}" required>
+            		<br/>
+            		<label class="Typo" style="font-size: 20px;">Mot de passe : </label>
+            		<input type="password" name="password" value="" required>
+           	 	</div>
+            	<br/><br/>
+            	<button class="button" type="submit" style="width: 14vw; height: 5vh; font-size: 2vmin; font-family: 'Lato', sans-serif;" name="action" value="Se connecter">Se connecter</button>
+        	</form><br/>
+        	<a href="/req_afficher_formulaire_inscription_fr"><button class="button" style="width: 14vw; height: 5vh; font-size: 2vmin; font-family: 'Lato', sans-serif;">Créer un compte</button></a>
+		</div>
+		<div class="center" style="top: 95%; left: 90%;" >
+			<form action="/req_contacter" method="GET">
+				<button class="button" type="submit" style="width: 10vw; height: 5vh; font-size: 2vmin; ">
+				<label style="font-size: 15px">NOUS CONTACTER</label>
+			</form>
+		</div>
+    </body>
+</html>
+

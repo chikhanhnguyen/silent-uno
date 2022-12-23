@@ -1,0 +1,274 @@
+/*Constant colors and backgrounds */
+.color_silver {
+    color: white;
+}
+
+:root {
+    --main-button-color: cornflowerblue;
+    --main-button-color-hover: #1a5276;
+}
+
+/*
+body {
+	background: url("ressources/accueil.png");
+} */
+
+/* Pour div */
+.center {
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/* Pour les boutons */
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: inline-block;
+    border-radius: 3vh;
+    color: #fff;
+    text-transform: uppercase;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border: none;
+}
+.button::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: var(--main-button-color-hover);
+    transition: all .3s;
+    border-radius: 3vh;
+    z-index: -1;
+}
+.button:hover {
+    color: #fff;
+}
+.button:hover::before {
+    width: 100%;
+}
+.button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-button-color);
+    border-radius: 3vh;
+    z-index: -2;
+}
+
+/* Pour l'animation de texte */
+.wordCarousel {
+    font-size: 6vmin;
+    font-weight: 100;
+    color: white;
+}
+
+.wordCarousel div {
+    overflow: hidden;
+    position: relative;
+    float: left;
+    height: 8vmin;
+    padding-top: 1vmin;
+    margin-top: -1vmin;
+	color: white;
+}
+
+.wordCarousel div ul {
+    padding: 0px;
+}
+
+.wordCarousel div li {
+    padding: 0 10px;
+    height: 45px;
+    margin-bottom: 45px;
+    display: block;
+}
+
+
+.flip2 { animation: flip2 6s cubic-bezier(0.23, 1, 0.32, 1.2) infinite; }
+.flip3 { animation: flip3 8s cubic-bezier(0.23, 1, 0.32, 1.2) infinite; }
+.flip4 { animation: flip4 10s cubic-bezier(0.23, 1, 0.32, 1.2) infinite; }
+
+@keyframes flip2 {
+    0% { margin-top: -180px; }
+    5% { margin-top: -90px;  }
+    50% { margin-top: -90px; }
+    55% { margin-top: 0px; }
+    99.99% { margin-top: 0px; }
+    100% { margin-top: -270px; }
+}
+
+@keyframes flip3 {
+    0% { margin-top: -270px; }
+    5% { margin-top: -180px; }
+    33% { margin-top: -180px; }
+    38% { margin-top: -90px; }
+    66% { margin-top: -90px; }
+    71% { margin-top: 0px; }
+    99.99% { margin-top: 0px; }
+    100% { margin-top: -270px; }
+}
+
+@keyframes flip4 {
+    0% { margin-top: -360px; }
+    5% { margin-top: -270px; }
+    25% { margin-top: -270px; }
+    30% { margin-top: -180px; }
+    50% { margin-top: -180px; }
+    55% { margin-top: -90px; }
+    75% { margin-top: -90px; }
+    80% { margin-top: 0px; }
+    99.99% { margin-top: 0px; }
+    100% { margin-top: -270px; }
+}
+
+.body_like {
+    margin: 0;
+    padding: 0;
+    color: cornflowerblue;
+    text-align: center;
+}
+
+.loader {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    border-radius: 50px;
+    border: 5px solid rgba(255,255,255,0.4);
+    vertical-align: middle;
+    border-top: 5px solid cornflowerblue;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	0% {transform: rotate(0deg);}
+	100% {transform: rotate(360deg);}
+}
+
+.Typo {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+/* Pour afficher table du jeu */
+#rcorners_equipe_bleu {
+    border-radius: 25px;
+    border: 3px solid #2185ad;
+    padding: 20px;
+    width: 600px;
+    height: 80px;
+  }
+  #rcorners_equipe_rouge {
+    border-radius: 25px;
+    border: 3px solid #b31c1c;
+    padding: 20px;
+    width: 600px;
+    height: 80px;
+  }
+  #rcorners_equipe_plateau {
+    border-radius: 25px;
+    border: 3px solid white;
+    padding: 20px;
+    width: 200px;
+    height: 200px;
+  }
+
+  /* border animation */
+  .gradient-border {
+    --border-width: 2px;
+    display:inline-block;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 8vmin;
+    height: 11vmin;
+    font-family: Lato, sans-serif;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: white;
+    background: #222;
+    border-radius: 20%;
+  }
+
+.gradient-border::after {
+    position: absolute;
+    content: "";
+    top: calc(-1 * var(--border-width));
+    left: calc(-1 * var(--border-width));
+    z-index: -1;
+    width: calc(100% + var(--border-width) * 2);
+    height: calc(100% + var(--border-width) * 2);
+    background: linear-gradient(
+    60deg,
+    hsl(224, 85%, 66%),
+    hsl(269, 85%, 66%),
+    hsl(314, 85%, 66%),
+    hsl(359, 85%, 66%),
+    hsl(44, 85%, 66%),
+    hsl(89, 85%, 66%),
+    hsl(134, 85%, 66%),
+    hsl(179, 85%, 66%)
+    );
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    border-radius: 10%;
+    animation: moveGradient 4s alternate infinite;
+}
+  
+@keyframes moveGradient {
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Chat box */
+#wrapper, #loginform {
+    margin:0 auto;
+    padding-bottom:20px;
+    background:#05283d38;
+    border-radius: 5%;
+    width:45vmin;
+    border:1px solid #ffffff; }
+  
+#loginform { padding-top:18px; }
+  
+#loginform p { margin: 5px; }
+  
+#chatbox {
+    text-align:left;
+    margin:0 auto;
+    margin-bottom:25px;
+    padding:8px;
+    background:#fff;
+    height:35vmin;
+    width:38vmin;
+    border:1px solid #ACD8F0;
+    border-radius: 5%;
+    overflow:auto; }
+  
+#usermsg {
+    width:31vmin;
+    height:3vmin;
+    border:1px solid #ACD8F0;
+}
+  
+#submit {
+    width: 6vmin;
+}
+  
+.error { color: #ff0000; }
+  
+#menu { padding:12px 12px 12px 12px; }
+  
+.msgln { margin:0 0 2px 0; }

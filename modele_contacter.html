@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Silent Uno</title>
+		<link rel="icon" href="ressources/Uno_logo.png" type="image/icon type">
+		<link rel="stylesheet" type="text/css" href="common.css">
+		<link rel="stylesheet" href="style_accueil.css">
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		
+		<style>
+		label {
+			display: inline-block;
+			float: left;
+			clear: left;
+			padding-right: 50px;
+			text-align: right;
+			font-size: 4vmin;
+			font-family: 'Lato', sans-serif;
+			color: white;
+		}
+
+		input {
+			display: inline-block;
+			float: left;
+		}
+		
+		textarea {
+			display: inline-block;
+			float: left;
+		}
+		</style>
+    </head>
+    <body>
+        <div class="center" style="top: 10%; left: 7%;">
+            <img src="ressources/Uno_logo.png" style="height: 17.5vmin;">
+        </div>
+        <div class="center" style="top: 45%; left: 50%; text-align: left;">
+			<form action="/req_contacter" method="GET">
+                <label style="padding-bottom: 20px">Pseudo</label>
+                <input type="text" placeholder="Votre pseudo" required>
+				<label style="padding-bottom: 10px">Message</label>
+				<textarea style="width: 100%; height: 30%; resize: none;" cols="100" rows="20" placeholder="Votre message" required></textarea>
+        </div>
+		<div class="center" style="top: 85%; left: 80%" >
+			<span style="color: white; font-size: 20px">{envoyer}</span><br><br>
+		</div>
+				<input type="hidden" name="envoyer" value="true">
+				<div class="center" style="top: 90%; left: 80%;">
+					<button class="button" style="width: 15vw; height: 6vh; font-size: 2vmin">Envoyer</button>
+				</div>
+			</form>
+		<div class="center" style="top: 90%; left: 20%;">
+            <form action="/" method="GET">
+                <button class="button" style="width: 15vw; height: 6vh; font-size: 2vmin">Retour</button>
+            </form>
+        </div>
+    </body>
+</html>
+~                                              

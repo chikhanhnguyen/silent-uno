@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Silent Uno</title>
+        <link rel="icon" href="ressources/Uno_logo.png" type="image/icon type">
+        <link rel="stylesheet" type="text/css" href="common.css">
+        <link rel="stylesheet" href="style_autre.css">
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    </head>
+    <body>
+        <div class="center" style="top: 10%; left: 7%;">
+            <img src="ressources/Uno_logo.png" style="height: 17.5vmin;">
+        </div>
+		<div class="center" style="top: 50%; left: 50%" >
+			<span style="color: red; font-size: 30px">{erreur}</span>
+		</div>
+		<div class="center" style="top: 90%; left: 20%;">
+            <form action="/req_afficher_accueil_membre" method="GET">
+				<input type="hidden" name="pseudo" value="{pseudo}">
+                <button class="button" style="width: 15vw; height: 6vh; font-size: 2vmin">Retour</button>
+            </form>
+        </div>
+	</body>
+</html>

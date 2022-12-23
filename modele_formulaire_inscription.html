@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Silent Uno</title>
+		<link rel="icon" href="ressources/Uno_logo.png" type="image/icon type">
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="style_accueil.css">
+		<link rel="stylesheet" href="common.css">
+    </head>
+    <body>
+        <img class="LOGOGLOBAL" src="ressources/Uno_logo.png">
+		<div class="textcenter">
+		<h2 class="Typo">Formulaire de création de compte</h2>
+
+		<span style="color: red;">{erreur}</span><br><br>
+
+        <form action="/req_inscrire_fr" method="GET">
+            <div class="Aligntext">
+				<label class="Typo" style="font-size: 20px;">Pseudo :</label>
+            	<input type="text" name="pseudo" value="{pseudo}" required>
+            	<br/>
+            	<label class="Typo" style="font-size: 20px;">Mot de passe :</label>
+            	<input type="text" name="password" value="" required>
+					<br/>
+					<br/>
+					<br>
+					<br>
+				<div class="center" style="left: 50%">
+            		<button class="button" type="submit" style="width: 14vw; height: 5vh; font-size: 2vmin; text-align: center" name="action" value="creer">Créer compte</button>
+				</div>
+			</div>
+		</form>
+    </body>
+</html>
+
