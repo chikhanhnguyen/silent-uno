@@ -4,7 +4,7 @@ Créer un jeu basé sur les règles du Uno.
 
 # TECHNOLOGIES
 
-Java Script, Node.js, Html, Css.
+JavaScript, Node.js, Html, Css.
 
 # SCREENSHOT
 
